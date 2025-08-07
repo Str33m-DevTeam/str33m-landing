@@ -48,32 +48,34 @@ npm run preview
 
 ## 🌐 Deployment to Cloudflare
 
-### Option 1: Direct CLI Deployment
+### Automatic Deployment with GitHub Actions
 
+The project is configured to automatically deploy to Cloudflare Pages on every push to the `main` branch.
+
+#### Setup GitHub Secrets (Required)
+
+Go to your repository's **Settings → Secrets and variables → Actions**, and add:
+
+1. **CLOUDFLARE_API_TOKEN**: 
+   - Go to https://dash.cloudflare.com/profile/api-tokens
+   - Create token with "Cloudflare Pages:Edit" permissions
+   - Copy and add as secret
+
+2. **CLOUDFLARE_ACCOUNT_ID**:
+   - Find in Cloudflare dashboard URL: `https://dash.cloudflare.com/[ACCOUNT_ID]/pages`
+   - Or go to any Cloudflare Pages project → Settings → Account ID
+   - Copy and add as secret (adf6b4563128323e5c8678b304e4df29)
+
+Once configured, deployments will happen automatically on push to main!
+
+### Manual CLI Deployment
+
+For local manual deployment:
 ```bash
 npm run deploy
 ```
 
 This runs the build and deploys directly to Cloudflare Pages using Wrangler.
-
-### Option 2: GitHub Integration (Recommended)
-
-1. Push code to GitHub repository
-2. Go to [Cloudflare Pages Dashboard](https://dash.cloudflare.com/pages)
-3. Click "Create a project" → "Connect to Git"
-4. Select your repository
-5. Configure build settings:
-   - **Build command**: `npm run build`
-   - **Build output directory**: `dist`
-   - **Root directory**: `/` (or your project path)
-6. Deploy!
-
-### Option 3: Manual Upload
-
-1. Build the project: `npm run build`
-2. Go to Cloudflare Pages Dashboard
-3. Create new project → Upload assets
-4. Drag and drop the `dist` folder
 
 ## 🔧 Configuration
 

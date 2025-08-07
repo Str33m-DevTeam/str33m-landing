@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "build": "echo 'No build needed for static site' && mkdir -p dist && cp -r public/* dist/",
     "deploy": "wrangler pages deploy dist --project-name=str33m-landing"
   },
   "devDependencies": {
