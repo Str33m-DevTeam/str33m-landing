@@ -1,0 +1,12 @@
+{
+  "name": "str33m-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "deploy": "wrangler pages deploy dist --project-name=str33m-landing"
+  },
+  "devDependencies": {
+    "wrangler": "^3.99.0"
+  }
+}
