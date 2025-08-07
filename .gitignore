@@ -55,3 +55,6 @@ package-lock.json
 # GitHub CLI
 gh_*
 *.tar.gz
+
+# Claude configuration (keep local)
+CLAUDE.md
